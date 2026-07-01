@@ -1,0 +1,11 @@
+C:\Users\patip\FileProcessing\bin\Debug\malware_500.csv
+C:\Users\patip\FileProcessing\bin\Debug\FileProcessing.exe.config
+C:\Users\patip\FileProcessing\bin\Debug\FileProcessing.exe
+C:\Users\patip\FileProcessing\bin\Debug\FileProcessing.pdb
+C:\Users\patip\FileProcessing\obj\Debug\FileProcessing.csproj.AssemblyReference.cache
+C:\Users\patip\FileProcessing\obj\Debug\FileProcessing.frmTextView.resources
+C:\Users\patip\FileProcessing\obj\Debug\FileProcessing.Properties.Resources.resources
+C:\Users\patip\FileProcessing\obj\Debug\FileProcessing.csproj.GenerateResource.cache
+C:\Users\patip\FileProcessing\obj\Debug\FileProcessing.csproj.CoreCompileInputs.cache
+C:\Users\patip\FileProcessing\obj\Debug\FileProcessing.exe
+C:\Users\patip\FileProcessing\obj\Debug\FileProcessing.pdb

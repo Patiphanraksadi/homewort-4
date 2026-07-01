@@ -58,61 +58,96 @@ namespace FileProcessing
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The event data.</param>
-		private void btReadCSV_Click(object sender, EventArgs e)
-		{
+        private void btReadCSV_Click(object sender, EventArgs e)
+        {
+            // === 🎯 ตั้งค่า m, n และ Filter ตรงนี้สำหรับการทดสอบ (Part A) ===
+            int m = 10;             // โหลดตั้งแต่บรรทัดที่
+            int n = 20;            // ถึงบรรทัดที่
+            string filter = ""; // นามสกุลไฟล์ที่ต้องการ (ใส่ "" ถ้าไม่ต้องการกรอง)
+            // ========================================================
+
+            // เคลียร์ข้อมูลเก่าออกตารางก่อนโหลดใหม่
+            dgvData.Columns.Clear();
+            dgvData.Rows.Clear();
+
             using (StreamReader srReader = new StreamReader(tbFileName.Text))
             {
-                string strLine; // Variable to hold each line read from the file
-				bool bHeaderRead = false;   // Flag to indicate whether the header line has been read
+                string strLine;
+                bool bHeaderRead = false;
+                int currentRow = 0; // ตัวนับบรรทัดข้อมูล (ไม่รวม Header)
 
-				// Main loop: Read the file line by line
-				while ((strLine = srReader.ReadLine()) != null)
+                while ((strLine = srReader.ReadLine()) != null)
                 {
                     string[] strHeaders_arr = null;
-					// Skip comment lines and check for header line
-					if (strLine.StartsWith("#")) 
-                    { 
-                        if (    strLine.Length > 8
-                           &&   strLine.Substring(0, 8).Equals("#HEADER") 
-                           )
+
+                    if (strLine.StartsWith("#"))
+                    {
+                        if (strLine.Length > 8 && strLine.Substring(0, 8).Equals("#HEADER"))
                         {
-							// Read the header line and split it into an array of headers
-							strHeaders_arr = strLine.Substring(8).Split(',');
-						}
+                            strHeaders_arr = strLine.Substring(8).Split(',');
+                        }
                         continue;
                     }
-					// Split the current line into an array of values
-					string[] strValues_arr = strLine.Split(',');
 
-					// If the header has not been read yet, add the headers to the DataGridView columns
-					if (!bHeaderRead)
+                    string[] strValues_arr = strLine.Split(',');
+
+                    if (!bHeaderRead)
                     {
-						// Add the headers to the DataGridView columns, using the header names from the header line if available
-						foreach (string strHeader in strValues_arr)
+                        foreach (string strHeader in strValues_arr)
                         {
-                            if ( strHeaders_arr == null )
+                            if (strHeaders_arr == null)
                                 dgvData.Columns.Add(strHeader.Trim(), strHeader.Trim());
                             else
                                 dgvData.Columns.Add(strHeader.Trim(), strHeaders_arr[dgvData.Columns.Count].Trim());
-						}
+                        }
                         bHeaderRead = true;
                     }
                     else
                     {
-						// Add the values to the DataGridView rows
-						dgvData.Rows.Add(strValues_arr);
-                    }
-				}   // Main loop: Read the file line by line
-			}
+                        currentRow++; // เริ่มนับแถวข้อมูล
 
-		}
-		/// <summary>
-		/// Handles the Click event of the Browse button, allowing the user to select a file and displaying its path in the
-		/// file name text box.
-		/// </summary>
-		/// <param name="sender">The source of the event.</param>
-		/// <param name="e">The event data.</param>
-		private void btBrowse_Click(object sender, EventArgs e)
+                        // 1. ดัก Error Case: ถ้า n น้อยกว่า m ให้แจ้งเตือนและหยุดทำงาน
+                        if (n < m)
+                        {
+                            MessageBox.Show("Error: ค่า n ต้องมากกว่าหรือเท่ากับ m", "Error Test Case", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+
+                        // 2. Partial Loading (ข้าม): ถ้ายูนิตข้อมูลยังไม่ถึงบรรทัดที่ m ให้ข้ามไป
+                        if (currentRow < m)
+                        {
+                            continue;
+                        }
+
+                        // 3. Partial Loading (หยุด): ถ้าโหลดเกินบรรทัดที่ n ให้หยุดลูปทันที (โปรแกรมจะได้ไม่ค้าง)
+                        if (currentRow > n)
+                        {
+                            break;
+                        }
+
+                        // 4. Filtering: คัดกรองประเภทไฟล์ (ตรวจสอบว่ามีคำที่หาในบรรทัดนั้นไหม)
+                        if (!string.IsNullOrEmpty(filter))
+                        {
+                            // ถ้าบรรทัดนี้ ไม่มีคำที่ตั้งเป็น filter ไว้ ให้ข้ามไป
+                            if (strLine.IndexOf(filter, StringComparison.OrdinalIgnoreCase) < 0)
+                            {
+                                continue;
+                            }
+                        }
+
+                        // 5. ถ้าผ่านเงื่อนไขทั้งหมด ค่อยเพิ่มข้อมูลลงตาราง
+                        dgvData.Rows.Add(strValues_arr);
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// Handles the Click event of the Browse button, allowing the user to select a file and displaying its path in the
+        /// file name text box.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data.</param>
+        private void btBrowse_Click(object sender, EventArgs e)
 		{
 			using (OpenFileDialog ofd = new OpenFileDialog())
 			{
