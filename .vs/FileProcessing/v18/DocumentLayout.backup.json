@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\patip\\FileProcessing\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAB1CDE-088D-4ADC-9127-E6247133FE80}|FileProcessing.csproj|c:\\users\\patip\\fileprocessing\\textcsv_viewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7AAB1CDE-088D-4ADC-9127-E6247133FE80}|FileProcessing.csproj|solutionrelative:textcsv_viewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAB1CDE-088D-4ADC-9127-E6247133FE80}|FileProcessing.csproj|C:\\Users\\patip\\FileProcessing\\textcsv_viewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAB1CDE-088D-4ADC-9127-E6247133FE80}|FileProcessing.csproj|solutionrelative:textcsv_viewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AAB1CDE-088D-4ADC-9127-E6247133FE80}|FileProcessing.csproj|c:\\users\\patip\\fileprocessing\\textcsv_viewer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AAB1CDE-088D-4ADC-9127-E6247133FE80}|FileProcessing.csproj|solutionrelative:textcsv_viewer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TextCSV_Viewer.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\patip\\FileProcessing\\TextCSV_Viewer.Designer.cs",
+              "RelativeDocumentMoniker": "TextCSV_Viewer.Designer.cs",
+              "ToolTip": "C:\\Users\\patip\\FileProcessing\\TextCSV_Viewer.Designer.cs",
+              "RelativeToolTip": "TextCSV_Viewer.Designer.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAwwEgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-02T10:10:41.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TextCSV_Viewer.cs",
+              "DocumentMoniker": "C:\\Users\\patip\\FileProcessing\\TextCSV_Viewer.cs",
+              "RelativeDocumentMoniker": "TextCSV_Viewer.cs",
+              "ToolTip": "C:\\Users\\patip\\FileProcessing\\TextCSV_Viewer.cs",
+              "RelativeToolTip": "TextCSV_Viewer.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAkwJoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-02T00:44:23.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TextCSV_Viewer.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\patip\\FileProcessing\\TextCSV_Viewer.cs",
+              "RelativeDocumentMoniker": "TextCSV_Viewer.cs",
+              "ToolTip": "C:\\Users\\patip\\FileProcessing\\TextCSV_Viewer.cs [Design]",
+              "RelativeToolTip": "TextCSV_Viewer.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-02T00:42:37.431Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
